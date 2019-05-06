@@ -1,0 +1,31 @@
+{
+  "name": "backbone.js-based-calculator",
+  "version": "1.0.0",
+  "description": "skb-test ======== This is test task of organization \"SKB-KONTUR\", writed on backbone.js library.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipbebnev/backbone.js-based-calculator.git"
+  },
+  "keywords": [
+    "backbone.js",
+    "calculator",
+    "SPA"
+  ],
+  "author": "Roman Bebnev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipbebnev/backbone.js-based-calculator/issues"
+  },
+  "homepage": "https://github.com/ipbebnev/backbone.js-based-calculator#readme",
+  "dependencies": {
+    "backbone": "^1.4.0",
+    "bootstrap3": "^3.3.5",
+    "jquery": "^1.10.1",
+    "requirejs": "^2.3.6",
+    "underscore": "^1.9.1"
+  }
+}

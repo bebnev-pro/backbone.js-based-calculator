@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="lib/jquery1.10.1.js"></script>
-    <script type="text/javascript" src="lib/underscore.js"></script>
-    <script type="text/javascript" src="lib/backbone.js"></script>
+
     <script type="text/template" id="viewItem">
-            <input class="b-item" type="text" placeholder="0" value="<%= cash %>">
-            <input class="b-item__save" type="submit" value="Сохранить">
-            <a class="b-item__delete" href="#">Удалить</a>
+        <td class="col-md-8">
+            <input class="form-control b-item_description" type="text" placeholder="Description..." value="<%= description %>">
+        </td>
+        <td class="col-md-4" style="white-space: nowrap;">
+            <input class="form-control b-item" style="display: inline-block; width: initial;" type="text" placeholder="0" value="<%= cash %>">
+            <button type="button" class="b-item__save btn btn-primary">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Set
+            </button>
+            <button type="button" class="b-item__delete btn btn-danger">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
+            </button>
+        </td>
     </script>
-    <script type="text/javascript" src="model.js"></script>
-    <script type="text/javascript" src="view.js"></script>
-    <script type="text/javascript" src="controller.js"></script>
+
     <meta charset="utf-8">
-    <title>Backbone project</title>
+    <title>Backbone based calculator</title>
 </head>
+
 <body>
-    <input type="submit" class="b-add" value="Добавить строчку">
-    <p class="b-summ__text"><strong>Cумма, р.</strong></p>
-    <div id="container">
+    <div class="container">
+        <div class="button_wrapper">
+            <button type="button" class="b-add btn btn-success">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add row
+            </button>
+        </div>
+        <table class="table table-hover table-condensed">
+            
+        </table>
+        <div class="b-summ__positioner_wrap">
+            <div class="well b-summ__positioner">
+                Summary:
+                <strong class="b-summ__summ" id="summ">0</strong>
+            </div>
+        </div>
     </div>
-    <div class="b-summ__positioner">
-        Итого:
-        <strong class="b-summ__summ" id="summ">0</strong>
-    </div>
-    <script type="text/javascript" src="main.js"></script>
+    <!-- BACKBONE -->
+    <script data-main="src/main" src="node_modules/requirejs/require.js"></script>
 </body>
+
 </html>
