@@ -1,0 +1,10 @@
+{
+  "framework": "mocha",
+  "src_files": [
+    "node_modules/requirejs/bin/r.js",
+    "src/*.js",
+    "src/models/*.js",
+    "src/views/*.js",
+    "tests/*.js"
+  ]
+}
