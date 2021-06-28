@@ -1,7 +1,7 @@
 {
   "name": "backbone.js-based-calculator",
   "version": "1.0.0",
-  "description": "skb-test ======== This is test task of organization \"SKB-KONTUR\", writed on backbone.js library.",
+  "description": "skb-test ======== This is the test task of the some organisation, writed on backbone.js library.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
