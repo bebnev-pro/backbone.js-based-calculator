@@ -1,17 +1,24 @@
+/*global define */
 require.config({
   paths: {
     'jquery': '../node_modules/jquery/dist/jquery',
     'underscore': '../node_modules/underscore/underscore',
     'backbone': '../node_modules/backbone/backbone',
+  },
+  shim: {
+    backbone: {
+      deps: ['underscore', 'jquery'],
+      exports: 'Backbone'
+    }
   }
 });
 
 require(['views/main'], function (Start) {
   let start =  new Start;
-  $(window).resize(e=>{
+  $(window).on('resize', (e=>{
     start.newSumm();
-  });
-  $(window).scroll(e=>{
+  }));
+  $(window).on('scroll', (e=>{
     start.newSumm();
-  });
+  }));
 });

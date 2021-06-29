@@ -1,7 +1,7 @@
 {
   "name": "backbone.js-based-calculator",
   "version": "1.0.0",
-  "description": "skb-test ======== This is test task of organization \"SKB-KONTUR\", writed on backbone.js library.",
+  "description": "skb-test ======== This is the test task of the some organisation, writed on backbone.js library.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +24,10 @@
   "dependencies": {
     "backbone": "^1.4.0",
     "bootstrap3": "^3.3.5",
+    "chai": "^4.3.4",
+    "chai-jquery": "^2.1.0",
     "jquery": "^3.5.0",
+    "mocha": "^9.0.1",
     "requirejs": "^2.3.6",
     "underscore": "^1.12.1"
   }

@@ -1,7 +1,9 @@
 define([
-  'backbone'
+  'backbone',
+  'underscore'
 ], function (
-  Backbone
+  Backbone,
+  _
 ) {
     var ItemView = Backbone.View.extend({
       tagName: 'tr',
