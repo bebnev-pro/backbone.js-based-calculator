@@ -15,13 +15,13 @@ define([
         "click .b-add": "addObject"
       },
       initialize: function () {
-        this.coll = new ItemCollection();
+        this.collection = new ItemCollection();
         this.model = new Summ();
-        this.listenTo(this.coll, 'add', this.addOne);
-        this.listenTo(this.coll, 'change', this.newSumm);
+        this.listenTo(this.collection, 'add', this.addOne);
+        this.listenTo(this.collection, 'change', this.newSumm);
       },
       addObject: function () {
-        this.coll.add({});
+        this.collection.add({});
       },
       addOne: function (model) {
         var view = new ItemView({ model: model });
@@ -30,7 +30,7 @@ define([
       },
       newSumm: function () {
         var summator = 0;
-        this.coll.each(function (obj, index) {
+        this.collection.each(function (obj, index) {
           summator += obj.get('cash');
         })
         this.$('.b-summ__summ').text(summator);

@@ -1,3 +1,7 @@
+if (typeof define !== 'function') {
+  var define = require('amdefine')(module);
+}
+
 define([
   'backbone'
 ], function (
@@ -6,7 +10,7 @@ define([
 
     var Summ = Backbone.Model.extend({
       defaults: {
-        summ: 230
+        summ: 0
       }
     });
 

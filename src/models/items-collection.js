@@ -1,6 +1,10 @@
+if (typeof define !== 'function') {
+  var define = require('amdefine')(module);
+}
+
 define([
   'backbone',
-  'models/item'
+  './item'
 ], function (
   Backbone,
   Item
@@ -9,7 +13,6 @@ define([
     var ItemCollection = Backbone.Collection.extend({
       model: Item
     });
-
     return ItemCollection;
 
   });
