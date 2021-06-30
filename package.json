@@ -4,7 +4,7 @@
   "description": "This is the test task of the some organisation, writed on backbone.js library.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./SpecRunner.js"
   },
   "repository": {
     "type": "git",

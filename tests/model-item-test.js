@@ -1,5 +1,9 @@
+if (typeof define !== 'function') {
+  var define = require('amdefine')(module);
+}
+
 define(function(require) {
-  var Item = require('models/item');
+  var Item = require('../src/models/item');
   var _ = require('underscore');
   var chai = require('chai');
   var expect = chai.expect;
