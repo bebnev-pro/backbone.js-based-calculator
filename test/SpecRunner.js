@@ -13,5 +13,6 @@ define(function(require) {
     '../src/models/item.spec.js',
     '../src/models/items-collection.spec.js',
     '../src/models/summ.spec.js',
+    '../src/views/item.spec.js'
   ], function(require) {});
 });

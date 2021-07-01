@@ -23,12 +23,15 @@
   "homepage": "https://github.com/ipbebnev/backbone.js-based-calculator#readme",
   "dependencies": {
     "amdefine": "^1.0.1",
+    "assert": "^2.0.0",
     "backbone": "^1.4.0",
     "bootstrap3": "^3.3.5",
     "chai": "^4.3.4",
     "chai-jquery": "^2.1.0",
+    "dom-storage": "^2.1.0",
     "jquery": "^3.5.0",
     "mocha": "^9.0.1",
+    "mocha-jsdom": "^2.0.0",
     "nyc": "^15.1.0",
     "requirejs": "^2.3.6",
     "underscore": "^1.12.1"
