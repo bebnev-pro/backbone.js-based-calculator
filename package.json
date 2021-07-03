@@ -35,5 +35,6 @@
     "nyc": "^15.1.0",
     "requirejs": "^2.3.6",
     "underscore": "^1.12.1"
-  }
+  },
+  "devDependencies": {}
 }
