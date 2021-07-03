@@ -25,14 +25,9 @@
 	width: 128px;
 	margin: 5px 0;
 }
-.b-item__delete {
-	/* display: none; */
-}
 .b-item__container {
 	position: relative;
-	width: 170px;
-	margin-left: 60px;
-	padding: 3px;
+	margin: 10px 0;
 }
 .b-item__container:hover .b-item__delete{
 	display: inline-block;

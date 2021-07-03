@@ -1,7 +1,7 @@
 {
   "name": "backbone.js-based-calculator",
   "version": "1.0.0",
-  "description": "This is the test task of the some organisation, writed on backbone.js library.",
+  "description": "This is other to-do list with summary, writed on backbone.js library.",
   "main": "main.js",
   "scripts": {
     "test": "nyc mocha"
@@ -24,7 +24,8 @@
   "dependencies": {
     "amdefine": "^1.0.1",
     "backbone": "^1.4.0",
-    "bootstrap3": "^3.3.5",
+    "bootstrap": "^5.0.2",
+    "bootstrap-icons": "^1.5.0",
     "chai": "^4.3.4",
     "chai-jquery": "^2.1.0",
     "jquery": "^3.5.0",

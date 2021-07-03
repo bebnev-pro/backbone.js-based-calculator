@@ -25,7 +25,7 @@ define([
       },
       addOne: function (model) {
         var view = new ItemView({ model: model });
-        this.$('.table').append(view.render());
+        this.$('.main-container').append(view.render());
         this.newSumm();
       },
       newSumm: function () {

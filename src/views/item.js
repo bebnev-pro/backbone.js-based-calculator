@@ -6,8 +6,8 @@ define([
   _
 ) {
     var ItemView = Backbone.View.extend({
-      tagName: 'tr',
-      className: 'b-item__container',
+      tagName: 'div',
+      className: 'b-item__container row',
       events: {
         "click .b-item__delete": "deleteItem",
         "blur .b-item": "changeValue",
