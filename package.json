@@ -4,7 +4,7 @@
   "description": "This is the test task of the some organisation, writed on backbone.js library.",
   "main": "main.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "mocha ./src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
