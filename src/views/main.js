@@ -1,8 +1,12 @@
+if (typeof define !== 'function') {
+  var define = require('amdefine')(module);
+}
+
 define([
   'backbone',
-  'models/items-collection',
-  'models/summ',
-  'views/item'
+  '../models/items-collection',
+  '../models/summ',
+  './item'
 ], function (
   Backbone,
   ItemCollection,
