@@ -38,6 +38,9 @@ define([
           summator += obj.get('cash');
         })
         this.$('.b-summ__summ').text(summator);
+        this.model.set({
+          summ: summator
+        });
         var wHeight = $(window).height();
         var dHeight = $(document).height();
         var dScroll = $(document).scrollTop();
