@@ -11,7 +11,6 @@ const expect = chai.expect;
 const assert = require('assert');
 var jsdom = require('mocha-jsdom');
 
-// test run separately
 describe('Views -> Item', function() {
 
   var $;
@@ -25,10 +24,26 @@ describe('Views -> Item', function() {
   it('Item View should be created', function() {
     const ItemView = require('./item');
     const ItemModel  = require('../models/item');
-    document.body.innerHTML = '<div id="viewItem">hola</div>';
-
+    document.body.innerHTML = '<div id="viewItem"><span class="b-item_description">Test Description</span><span class="b-item">123</span></div>';
     const model = new ItemModel();
     const itemView = new ItemView({ model: model });
+
     expect(itemView).to.be.ok;
+  });
+
+  it('Delete Item should empty the cash of model', function() {
+    const ItemView = require('./item');
+    const ItemModel  = require('../models/item');
+    document.body.innerHTML = '<div id="viewItem"><span class="b-item_description">Test Description</span><span class="b-item">123</span></div>';
+    const model = new ItemModel();
+    const itemView = new ItemView({ model: model });
+
+    model.set({
+      cash: 123,
+      description: '123'
+    });
+
+    itemView.deleteItem();
+    expect(model.attributes.cash).to.equal(0);
   });
 });

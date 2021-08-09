@@ -1,8 +1,12 @@
+if (typeof define !== 'function') {
+  var define = require('amdefine')(module);
+}
+
 define([
   'backbone',
-  'models/items-collection',
-  'models/summ',
-  'views/item'
+  '../models/items-collection',
+  '../models/summ',
+  './item'
 ], function (
   Backbone,
   ItemCollection,
@@ -34,6 +38,9 @@ define([
           summator += obj.get('cash');
         })
         this.$('.b-summ__summ').text(summator);
+        this.model.set({
+          summ: summator
+        });
         var wHeight = $(window).height();
         var dHeight = $(document).height();
         var dScroll = $(document).scrollTop();
