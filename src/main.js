@@ -14,11 +14,11 @@ require.config({
 });
 
 require(['views/main'], function (Start) {
-  let start =  new Start;
-  $(window).on('resize', (e=>{
+  const start =  new Start;
+  $(window).on('resize', ((e) => {
     start.newSumm();
   }));
-  $(window).on('scroll', (e=>{
+  $(window).on('scroll', ((e) => {
     start.newSumm();
   }));
 });

@@ -9,10 +9,8 @@ define([
   Backbone,
   Item
 ) {
-
-    var ItemCollection = Backbone.Collection.extend({
-      model: Item
-    });
-    return ItemCollection;
-
+  const ItemCollection = Backbone.Collection.extend({
+    model: Item
   });
+  return ItemCollection;
+});
