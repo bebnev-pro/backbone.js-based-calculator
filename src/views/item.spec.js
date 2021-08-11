@@ -9,11 +9,11 @@ global.sessionStorage = new Storage(null, { strict: true });
 const chai = require('chai');
 const expect = chai.expect;
 const assert = require('assert');
-var jsdom = require('mocha-jsdom');
+const jsdom = require('mocha-jsdom');
 
 describe('Views -> Item', function() {
 
-  var $;
+  let $;
   jsdom();
 
   before(function () {

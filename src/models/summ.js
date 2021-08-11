@@ -7,13 +7,10 @@ define([
 ], function (
   Backbone
 ) {
-
-    var Summ = Backbone.Model.extend({
-      defaults: {
-        summ: 0
-      }
-    });
-
-    return Summ;
-
+  const Summ = Backbone.Model.extend({
+    defaults: {
+      summ: 0
+    }
   });
+  return Summ;
+});
