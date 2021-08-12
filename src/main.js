@@ -4,6 +4,7 @@ require.config({
     'jquery': '../node_modules/jquery/dist/jquery',
     'underscore': '../node_modules/underscore/underscore',
     'backbone': '../node_modules/backbone/backbone',
+    'rxjs': 'lib/rxjs.umd',
   },
   shim: {
     backbone: {

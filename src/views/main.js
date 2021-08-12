@@ -5,24 +5,36 @@ if (typeof define !== 'function') {
 define([
   'backbone',
   '../models/items-collection',
+  '../models/item',
   '../models/summ',
-  './item'
+  './item',
+  'rxjs'
 ], function (
   Backbone,
   ItemCollection,
+  ItemModel,
   Summ,
-  ItemView
+  ItemView,
+  rxjs
 ) {
+  const fromEvent = rxjs.fromEvent;
   const Start = Backbone.View.extend({
     el: "body",
-    events: {
-      "click .b-add": "addObject"
-    },
     initialize: function () {
       this.collection = new ItemCollection();
       this.model = new Summ();
+
+      fromEvent($('.b-add'), 'click')
+      .subscribe(() => {
+        this.addObject();
+      });
+
+      fromEvent(this.collection, 'change')
+      .subscribe(() => {
+        this.newSumm();
+      });
+
       this.listenTo(this.collection, 'add', this.addOne);
-      this.listenTo(this.collection, 'change', this.newSumm);
     },
     addObject: function () {
       this.collection.add({});

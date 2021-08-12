@@ -4,45 +4,70 @@ if (typeof define !== 'function') {
 
 define([
   'backbone',
-  'underscore'
+  'underscore',
+  'rxjs'
 ], function (
   Backbone,
-  _
+  _,
+  rxjs
 ) {
+  const fromEvent = rxjs.fromEvent;
   const ItemView = Backbone.View.extend({
     tagName: 'div',
     className: 'b-item__container row',
-    events: {
-      "click .b-item__delete": "deleteItem",
-      "blur .b-item": "changeValue",
-      "blur .b-item_description": "changeValue",
-      "click .b-item__save": "changeValue"
-    },
     initialize: function () {
       this.template = _.template($('#viewItem').html());
-      this.listenTo(this.model, 'change', this.render);
-      this.listenTo(this.model, 'destroy', this.remove);
     },
+    subscriptions: null,
     render: function () {
-      const view = this.template(this.model.toJSON());
-      this.$el.html(view);
+      const viewHtml = this.template(this.model.toJSON());
+      this.$el.html(viewHtml);
+      this.makeSubscriptions();
       return this.$el;
     },
-    deleteItem: function () {
-      this.model.set({
-        cash: 0
+    makeSubscriptions() {
+      this.subscriptions = {};
+
+      this.subscriptions['deleteItem'] = fromEvent(this.$el.find('.b-item__delete'), 'click')
+      .subscribe(() => {
+        this.deleteItem();
       });
+
+      this.subscriptions['changeDescription'] = fromEvent(this.$el.find('.b-item_description'), 'blur')
+      .subscribe(() => {
+        this.changeValue();
+      });
+
+      this.subscriptions['changeItem'] = fromEvent(this.$el.find('.b-item'), 'blur')
+      .subscribe(() => {
+        this.changeValue();
+      });
+
+      this.subscriptions['changeModel'] = fromEvent(this.model, 'change')
+      .subscribe(() => {
+        this.render();
+      });
+
+    },
+    deleteItem: function () {
+      this.model.set({ cash: 0});
       this.model.destroy();
+      this.remove();
+      this.unsubscribeAll();
+    },
+    unsubscribeAll: function() {
+      for (let subscription in this.subscriptions) {
+        this.subscriptions[subscription].unsubscribe();
+      }
     },
     changeValue: function () {
-      let newVal = this.$('.b-item').val();
-      const newDescription = this.$('.b-item_description').val();
+      let newVal = this.$el.find('.b-item').val();
+      const newDescription = this.$el.find('.b-item_description').val();
       newVal = parseFloat(newVal);
       this.model.set({
         cash: !!newVal ? newVal : null,
         description: !!newDescription ? newDescription : null
-      }, { validate: true });
-      this.render();
+      });
     }
   });
   
